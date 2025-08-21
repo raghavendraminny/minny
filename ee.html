@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love You My Heart ❤</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      text-align: center;
+      background-image: url('C:/Users/admin/OneDrive/Pictures/mittu/WhatsApp Image 2025-08-02 at 23.34.52_15a44808.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .quote {
+      font-size: 1.5em;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background: #f8d7da;
+      color: #111;
+      border: none;
+      cursor: not-allowed; /* Initially set as disabled */
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .button:hover {
+      background: #e73c5d;
+      color: #fff;
+    }
+    .timer {
+      font-size: 1.5em;
+      color: #fff;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>I Love You, My Heart ❤</h1>
+    <div class="quote">
+      <p>"You are my sun, my moon, and all my stars." </p>
+      <p>"Every love story is beautiful, but ours is my favorite." </p>
+      <p>"In your smile, I see something more beautiful than stars." </p>
+    </div>
+    <a id="birthdayButton" class="button" href="https://raghavendraminny.github.io/bday/eee.html" target="_blank" style="pointer-events: none; text-decoration: none;">Open Your Birthday Surprise 💖</a>
+    <div id="timer" class="timer"></div>
+  </div>
+
+  <script>
+    // Set the target date for August 20, 2025
+    const countdownDate = new Date("August 22, 2025 00:00:00").getTime();
+
+    const timerEl = document.getElementById("timer");
+    const birthdayButton = document.getElementById("birthdayButton");
+
+    // Update the countdown every 1 second
+    const updateTimer = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = countdownDate - now;
+
+      // If the countdown has ended
+      if (diff <= 0) {
+        clearInterval(updateTimer);
+        birthdayButton.style.pointerEvents = 'auto'; // Enable the button link
+        birthdayButton.style.cursor = 'pointer'; // Change cursor to pointer
+        timerEl.innerHTML = "It's time! 🎉 You can now open your birthday surprise!";
+      } else {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        // Show the countdown timer
+        timerEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s until your surprise!`;
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
